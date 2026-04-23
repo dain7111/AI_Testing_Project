@@ -1,4 +1,8 @@
 ---
+description: 
+---
+
+---
 name: ai_testing_flow
 description: Quy trình kiểm thử AI hoàn chỉnh, thể hiện các bước rõ ràng từ phân tích yêu cầu đến tạo và xác nhận các test cases. 
 skills:

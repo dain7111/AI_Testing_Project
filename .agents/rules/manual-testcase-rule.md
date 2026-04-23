@@ -1,3 +1,7 @@
+---
+trigger: always_on
+---
+
 # Quy tắc xây dựng Manual Testcase cho AI Testing (QA Standards)
 
 ## 1. Mô tả (Description)

@@ -1,4 +1,8 @@
 ---
+description: 
+---
+
+---
 name: ai_agent_execution_standard
 description: Workflow tiêu chuẩn (System Prompt) ép buộc các AI Agent tuân thủ nghiêm ngặt tiến trình từ lúc đọc yêu cầu đến lúc ra test case, tích hợp cơ chế Checklist Tracking và Self-Correction để tránh ảo giác.
 ---
