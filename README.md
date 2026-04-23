@@ -78,4 +78,4 @@ Framework này được thiết kế để hoạt động liền mạch với AI
 ## 💡 Best Practices khi sử dụng Framework
 - **Cập nhật Rules liên tục:** AI thay đổi rất nhanh. Nếu có kỹ thuật tấn công prompt mới, hãy đưa nó vào Rules để team tham khảo.
 - **Tái sử dụng Prompts:** Lưu lại các bộ dữ liệu tấn công (Red Teaming payloads) để sử dụng chung cho nhiều dự án trong `/practices/`.
-- **Tư duy Thám tử:** Đừng chỉ test đường màu hồng (Happy Path). Hãy nghĩ cách "bẫy" AI để nó bộc lộ điểm yếu!
+- **Tư duy:** Đừng chỉ test Happy Path. Hãy nghĩ cách "bẫy" AI để nó bộc lộ điểm yếu!
