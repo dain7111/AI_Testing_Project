@@ -14,10 +14,6 @@ def judge_answer(config, testcase, actual_output):
     api_key = judge_config.get("api_key", "")
     base_url = judge_config.get("base_url")
     
-    print(f"  [JUDGE] Model    : {model}")
-    print(f"  [JUDGE] base_url : {base_url}")
-    print(f"  [JUDGE] Timeout  : {timeout}s")
-
     client = OpenAI(
         api_key=api_key,
         base_url=base_url,

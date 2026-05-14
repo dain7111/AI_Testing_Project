@@ -1,6 +1,6 @@
 target_api:
   type: "script"
-  script_path: "../../hnbtms.py"
+  script_path: "../qa_tool/hnbtms.py"
   function_name: "call_api"
   # Path tới câu trả lời của bot trong JSON Tourvis API trả về
   response_path: "data.userMessage.assistantMessage"

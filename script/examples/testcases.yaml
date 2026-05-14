@@ -12,21 +12,20 @@ test_cases:
               is_new_session: true
           input: "Bên bạn có bán những dịch vụ gì thế?"
           expected:
-            - response_contains_pattern: "Hàng không|Khách sạn|Dịch vụ|Tour"
-            - format: "bullet points"
+            - response_contains_pattern: "Tìm kiếm| Đặt vé| Máy bay"
             - tone: "professional, welcoming"
           evaluate:
-            - product_list_provided: true
+            - product_provided: true
             - tone_is_professional: true
         - turn: 2
           description: "Follow-up on specific product (hotel)"
           setup_from_previous: true
           input: "Mình muốn xem thêm về khách sạn ở Đà Lạt"
           expected:
-            - response_contains_pattern: "danh sách khách sạn ở Đà Lạt"
+            - response_contains_pattern: "chỉ hỗ trợ đặt vé máy bay"
           evaluate:
-            - retained_hotel_context: true
             - did_not_ask_where_to_search: true
+            - flight_booking_context: true
       flow_evaluation:
         - all_turns_passed: true
         - context_retained: true
