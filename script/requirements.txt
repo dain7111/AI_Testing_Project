@@ -1,0 +1,5 @@
+requests
+PyYAML
+pytest
+python-dotenv
+openai

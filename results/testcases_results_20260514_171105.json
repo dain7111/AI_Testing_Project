@@ -1,0 +1,95 @@
+[
+  {
+    "type": "test_flow",
+    "id": "TF-TOURVIS-001",
+    "name": "Product Overview & Context Retention",
+    "turns": [
+      {
+        "turn": 1,
+        "chatId": "8c257995-accd-4bb4-b22c-25c6f7617292",
+        "input": "Bên bạn có bán những dịch vụ gì thế?",
+        "api_response": {
+          "data": {
+            "userMessage": {
+              "id": "439419f2-0952-4d9e-b675-a14d2a2ee375",
+              "chatId": "8c257995-accd-4bb4-b22c-25c6f7617292",
+              "userMessage": "Bên bạn có bán những dịch vụ gì thế?",
+              "assistantMessage": "Tôi hỗ trợ tra cứu và đặt vé máy bay cho các chuyến công tác nước ngoài (vé quốc tế), bao gồm tìm kiếm các chuyến bay phù hợp dựa trên ngày đi, điểm đến, hãng hàng không, hạng ghế,... Nếu bạn cần tìm vé máy bay đi đâu, vui lòng cung cấp điểm đến và ngày xuất phát, tôi sẽ giúp bạn tra cứu ngay!",
+              "functionCalls": null,
+              "messageItems": [
+                {
+                  "id": "resp_00d2e4bc852068d1006a059fbbe824819387f3e1b14031d71b",
+                  "messageId": "439419f2-0952-4d9e-b675-a14d2a2ee375",
+                  "intent": "FLIGHT_SEARCH",
+                  "assistantMessage": "Tôi hỗ trợ tra cứu và đặt vé máy bay cho các chuyến công tác nước ngoài (vé quốc tế), bao gồm tìm kiếm các chuyến bay phù hợp dựa trên ngày đi, điểm đến, hãng hàng không, hạng ghế,... Nếu bạn cần tìm vé máy bay đi đâu, vui lòng cung cấp điểm đến và ngày xuất phát, tôi sẽ giúp bạn tra cứu ngay!",
+                  "createdAt": "2026-05-14T10:11:09",
+                  "updatedAt": "2026-05-14T10:11:09",
+                  "query": null,
+                  "result": null
+                }
+              ],
+              "createdAt": "2026-05-14T10:11:07.480484"
+            },
+            "chat": {
+              "id": "8c257995-accd-4bb4-b22c-25c6f7617292",
+              "title": "챗봇 제공 서비스 안내",
+              "status": "active",
+              "createdAt": "2026-05-14T10:11:07.227272",
+              "updatedAt": "2026-05-14T10:11:07.227278",
+              "userId": 1086504,
+              "isPinned": false,
+              "isFavorite": false,
+              "referenceId": null
+            },
+            "isNewChat": true
+          },
+          "message": null,
+          "error_code": null
+        }
+      },
+      {
+        "turn": 2,
+        "chatId": "8c257995-accd-4bb4-b22c-25c6f7617292",
+        "input": "Mình muốn xem thêm về khách sạn ở Đà Lạt",
+        "api_response": {
+          "data": {
+            "userMessage": {
+              "id": "4e922320-3617-46d9-8db9-76448102759c",
+              "chatId": "8c257995-accd-4bb4-b22c-25c6f7617292",
+              "userMessage": "Mình muốn xem thêm về khách sạn ở Đà Lạt",
+              "assistantMessage": "Cảm ơn bạn đã quan tâm! Tuy nhiên, tôi chỉ hỗ trợ đặt và tra cứu vé máy bay cho các chuyến công tác quốc tế. Nếu bạn cần tìm chuyến bay đi Đà Lạt hoặc bất kỳ điểm đến nào ở nước ngoài, hãy cho tôi biết ngày đi và điểm đến, tôi sẽ hỗ trợ bạn ngay nhé!",
+              "functionCalls": null,
+              "messageItems": [
+                {
+                  "id": "resp_00d2e4bc852068d1006a059fbf3b1c8193adcef96fcbb4c9e6",
+                  "messageId": "4e922320-3617-46d9-8db9-76448102759c",
+                  "intent": "FLIGHT_SEARCH",
+                  "assistantMessage": "Cảm ơn bạn đã quan tâm! Tuy nhiên, tôi chỉ hỗ trợ đặt và tra cứu vé máy bay cho các chuyến công tác quốc tế. Nếu bạn cần tìm chuyến bay đi Đà Lạt hoặc bất kỳ điểm đến nào ở nước ngoài, hãy cho tôi biết ngày đi và điểm đến, tôi sẽ hỗ trợ bạn ngay nhé!",
+                  "createdAt": "2026-05-14T10:11:18",
+                  "updatedAt": "2026-05-14T10:11:18",
+                  "query": null,
+                  "result": null
+                }
+              ],
+              "createdAt": "2026-05-14T10:11:11.09074"
+            },
+            "chat": {
+              "id": "8c257995-accd-4bb4-b22c-25c6f7617292",
+              "title": "챗봇 제공 서비스 안내",
+              "status": "active",
+              "createdAt": "2026-05-14T10:11:07.227272",
+              "updatedAt": "2026-05-14T10:11:07.227278",
+              "userId": 1086504,
+              "isPinned": false,
+              "isFavorite": false,
+              "referenceId": null
+            },
+            "isNewChat": false
+          },
+          "message": null,
+          "error_code": null
+        }
+      }
+    ]
+  }
+]

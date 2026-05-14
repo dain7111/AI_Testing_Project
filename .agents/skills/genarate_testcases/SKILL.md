@@ -1,7 +1,8 @@
 ---
-name: generate_testcases
+name: genarate_testcases
 description: Generate professional software test cases tailored for AI-integrated applications and Chatbots. Generate detailed all cases to cover all requirements, including AI-specific risks like hallucination, prompt injection, and context loss.
 tools: []
+
 ---
 
 ## Role
@@ -31,6 +32,9 @@ You automatically choose the most suitable technique depending on whether the fe
 
 When the user provides an AI feature, requirement, user story, or system behavior:
 
+> [!IMPORTANT]
+> You **MUST** read and strictly follow the rules defined in [manual-testcase-rule.md](./manual-testcase-rule.md) for every test case you generate. This includes mandatory AI context in preconditions, 4-factor expected patterns, and specific naming conventions.
+
 ### 1. Understand the AI Feature
 
 Before writing test cases, deeply analyze the AI's role in the feature.
@@ -56,12 +60,13 @@ Example:
 ### 2. Select Test Design Techniques
 
 - Use **Pattern Matching** to evaluate non-deterministic AI text.
-- Use **Adversarial Testing** for security, prompt lock-downs, and safety.
-- Use **State Transition Testing** for multi-turn conversations and memory testing.
-- Use **Equivalence Partitioning** for expected input validation.
+- Use **Adversarial Testing (Red Teaming)** for security, prompt lock-downs, prompt injection, and safety/toxicity.
+- Use **State Transition Testing** for multi-turn conversations and context/memory testing.
+- Use **Equivalence Partitioning** for grouping semantic intents (e.g., "polite", "aggressive", "off-topic") instead of testing every single variation, and for token limits (Boundary Value).
+- Use **Metamorphic Testing** when you don't have a perfect "Oracle". Test the relationship between inputs and outputs (e.g., if you add "Translate politely" to a prompt, the output must become more polite, even if the exact string is unpredictable).
 - IF feature has ≥ 2 conditions that affect the outcome
    → USE: Decision Table
-   → ACTION: List all condition combinations as a truth table
+   → ACTION: List all condition combinations as a truth table (Crucial for Tool-calling and RAG routing).
 - IF feature has a multi-step user flow
    → USE: Use Case Testing
    → ACTION: Map main flow + all alternative/exception flows
@@ -83,6 +88,7 @@ Xuyên suốt các module, luôn đảm bảo bao phủ:
 - **Functional/Core Flows:** Happy paths for AI responses.
 - **AI-Specific Risks:** Hallucination checks, Out-of-scope intent handling, Prompt injections.
 - **Multi-turn Context:** Testing memory across multiple interactions.
+- **Multi-language Handling:** Testing foreign languages, mixed languages, or sudden language switches.
 - **Negative scenarios:** Timeouts, API failures, Token limits.
 - **UI/UX behaviors:** Loading states (spinners), typing animations, chat rendering.
 - **Data handling:** Correct tool/API calling behind the scenes (No ID hallucinations).
@@ -116,7 +122,7 @@ For each decomposed Module/Flow, create a separate Heading (e.g., `## Module: Fo
 |---|---|---|---|---|---|---|---|
 
 - **Category:** Functional, Hallucination, Safety, Memory, Security, etc.
-- **Preconditions:** The simulated memory/history of the AI before the turn.
+- **Preconditions:** The simulated memory/history of the AI before the turn, a clear description is needed.
 - **User Input (Test Data):** Must contain the **EXACT prompt/string** the tester needs to copy-paste (Do not write abstract descriptions).
 - **Expected Pattern:** What the AI should output (meaning, tone, restrictions).
 - **Status:** can be 'Pass', 'Warning', 'Fail', 'Blocked'. Can have 2 column: PC and MO screen. 
@@ -135,5 +141,3 @@ Do not include automation code unless explicitly requested
 Professional, clear, and structured — like an authoritative guide written by a Senior AI QA Engineer for a real project.
 
 
-## Rules References
-- rules/manual_testcase_rule.md  - Rules for Test Case Generation  

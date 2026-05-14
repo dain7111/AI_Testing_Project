@@ -47,6 +47,7 @@ Mỗi bộ test case cho tính năng AI **BẮT BUỘC** phải bao phủ các c
 | 6 | **Intent Classification** | AI có phân loại đúng ý định khi có pending action hoặc sau lỗi? | ✅ Bắt buộc |
 | 7 | **Out-of-Scope** | AI xử lý như thế nào khi user hỏi ngoài phạm vi? | 🔸 Khuyến khích |
 | 8 | **UI/UX** | Loading state, streaming text, typing animation... | 🔸 Khuyến khích |
+| 9 | **Multi-language** | Đa ngôn ngữ, trộn ngôn ngữ (mixed), đổi ngôn ngữ giữa chừng | 🔸 Khuyến khích |
 
 ### 3.3 Coverage cho Multi-turn Flow
 - Mỗi tính năng AI có hội thoại đa lượt (multi-turn) **BẮT BUỘC** phải có ít nhất **1 test flow ≥ 3 lượt** để kiểm tra context retention.
@@ -55,7 +56,6 @@ Mỗi bộ test case cho tính năng AI **BẮT BUỘC** phải bao phủ các c
 ## 4. Quy tắc định dạng và Naming (Formatting & Naming Convention)
 
 ### 4.1. Naming Convention (Quy tắc đặt tên)
-- **Category viết tắt:** `FUNC` (Functional), `HALL` (Hallucination), `SEC` (Security), `SAF` (Safety), `MEM` (Memory), `INT` (Intent), `ERR` (Error Recovery), `OOS` (Out-of-Scope), `MULTI` (Multi-turn Flow).
 - **Testcase Title / Summary:**
   - Ngắn gọn, súc tích (khuyến nghị dưới 100 ký tự) nhưng vẫn thể hiện được mục đích của testcase.
   - **Cấu trúc bắt buộc:** `[Action Verb (Verify/Check/Ensure)] + [AI Behavior] + [Điều kiện/Ngữ cảnh]`.
@@ -87,7 +87,7 @@ Mỗi bộ test case cho tính năng AI **BẮT BUỘC** phải bao phủ các c
     - `"KHÔNG được trả response rỗng khi tool fail"`
     - `"KHÔNG được bịa thông tin không có trong database"`
 - **Trường phụ trợ (Meta fields):** Yêu cầu gán đầy đủ thuộc tính:
-  - **Category:** (Functional, Hallucination, Security, Safety, Memory, Intent, Error Recovery, Out-of-Scope, UI/UX)
+  - **Category:** (Functional, Hallucination, Security, Safety, Memory, Intent, Error Recovery, Out-of-Scope, UI/UX, Multi-language)
   - **Turn:** Số thứ tự lượt nói trong hội thoại (nếu multi-turn)
   - **Priority:** (Critical, High, Medium, Low)
 

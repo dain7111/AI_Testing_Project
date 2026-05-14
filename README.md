@@ -22,14 +22,17 @@ AI_Testing/
 ├── .agents/                 # Não bộ tự động hóa: Cấu hình cho AI Agent/Assistant
 │   ├── rules/               # Chứa các quy tắc bắt buộc (VD: manual-testcase-rule.md)
 │   ├── skills/              # Chứa các kỹ năng để Agent thực thi nhiệm vụ
-│   │   ├── requirement_analysis/ # Skill: Phân tích PRD để tìm rủi ro AI
-│   │   └── generate_testcases/   # Skill: Tạo testcase chuẩn QA
+│   │   ├── requirement_analysis/  
+│   │   │   └── SKILL.md           # Skill: Phân tích PRD để tìm rủi ro AI
+│   │   └── generate_testcases/ 
+│   │       └── SKILL.md           # Skill: Tạo testcase chuẩn QA 
 │   └── workflows/           # Chứa các luồng quy trình làm việc tự động
+│       └── ai-executing-standard.md        # Workflow: Quy trình làm việc tự động
 ├── practices/               # Khu vực thực hành và lưu trữ dự án thực tế
 │   ├── requirement/         # Lưu trữ requirements đã sinh
 │   └── testcase/            # Lưu trữ testcase đã sinh
 ├── README.md                # Giới thiệu chung và nguyên tắc cốt lõi (Core Principles)
-└── PROJECT_OVERVIEW.md      # File tổng quan này (Features, Structure, Workflow)
+
 ```
 
 ### 🔍 Giải thích chi tiết các thư mục:
@@ -39,6 +42,12 @@ AI_Testing/
    - **`skills/`**: Đóng gói các kỹ năng. Ví dụ khi bạn bảo AI "Hãy phân tích yêu cầu này", AI sẽ chạy skill `requirement_analysis` để rà soát Hallucination.
    - **`workflows/`**: Nơi định nghĩa các bước tuần tự (step-by-step) cho một quy trình lớn.
 2. **`/practices/`**: Nơi áp dụng Framework vào thực tế. Mỗi dự án AI mới (ví dụ Chatbot du lịch, Hệ thống phân loại ảnh) sẽ có một thư mục riêng biệt trong này để chứa tài liệu Test Plan, Testcase, và Bug Reports.
+
+### Nguyên tắc đặt tên 
+1. Luôn giữ các folder chính(.agent, rules, skills, workflows) không thay đổi tên.
+2. Folder trong skills: <skill-name>/ : SKILL.md
+3. workflows: <action>-<object>.md
+4. rules: <rule-name>-<rule>.md
 
 ---
 
@@ -78,4 +87,4 @@ Framework này được thiết kế để hoạt động liền mạch với AI
 ## 💡 Best Practices khi sử dụng Framework
 - **Cập nhật Rules liên tục:** AI thay đổi rất nhanh. Nếu có kỹ thuật tấn công prompt mới, hãy đưa nó vào Rules để team tham khảo.
 - **Tái sử dụng Prompts:** Lưu lại các bộ dữ liệu tấn công (Red Teaming payloads) để sử dụng chung cho nhiều dự án trong `/practices/`.
-- **Tư duy:** Đừng chỉ test Happy Path. Hãy nghĩ cách "bẫy" AI để nó bộc lộ điểm yếu!
+- **Tư duy:** Đừng chỉ test Happy Path. Hãy nghĩ cách "bẫy" AI để nó bộc lộ điểm yếu!      

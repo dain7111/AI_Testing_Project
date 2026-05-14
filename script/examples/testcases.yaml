@@ -1,0 +1,61 @@
+test_cases:
+
+  - test_flow:
+      id: TF-TOURVIS-001
+      name: "Product Overview & Context Retention"
+      description: "Verify AI can provide product overview and retain context for specific product follow-up."
+      turns:
+        - turn: 1
+          description: "Ask for product overview"
+          setup:
+            session_state:
+              is_new_session: true
+          input: "Bên bạn có bán những dịch vụ gì thế?"
+          expected:
+            - response_contains_pattern: "Hàng không|Khách sạn|Dịch vụ|Tour"
+            - format: "bullet points"
+            - tone: "professional, welcoming"
+          evaluate:
+            - product_list_provided: true
+            - tone_is_professional: true
+        - turn: 2
+          description: "Follow-up on specific product (hotel)"
+          setup_from_previous: true
+          input: "Mình muốn xem thêm về khách sạn ở Đà Lạt"
+          expected:
+            - response_contains_pattern: "danh sách khách sạn ở Đà Lạt"
+          evaluate:
+            - retained_hotel_context: true
+            - did_not_ask_where_to_search: true
+      flow_evaluation:
+        - all_turns_passed: true
+        - context_retained: true
+
+  # - test_flow:
+  #     id: TF-TOURVIS-002
+  #     name: "Booking Guide & Follow-up"
+  #     description: "Verify AI provides step-by-step booking guide and answers follow-up about a specific step."
+  #     turns:
+  #       - turn: 1
+  #         description: "Ask for flight booking guide"
+  #         setup:
+  #           session_state:
+  #             is_new_session: true
+  #         input: "Hướng dẫn mình cách đặt vé máy bay trên web với"
+  #         expected:
+  #           - response_contains_pattern: "tìm kiếm(.*)chọn chuyến(.*)điền thông tin(.*)thanh toán"
+  #           - format: "numbered list"
+  #         evaluate:
+  #           - steps_are_sequential: true
+  #           - payment_step_included: true
+  #       - turn: 2
+  #         description: "Follow-up on specific step"
+  #         setup_from_previous: true
+  #         input: "Ở bước chọn chuyến, mình có được chọn chỗ ngồi luôn không?"
+  #         expected:
+  #           - response_contains_pattern: "quy định chọn chỗ ngồi"
+  #         evaluate:
+  #           - retained_flight_booking_context: true
+  #           - did_not_wander_to_hotel: true
+  #     flow_evaluation:
+  #       - all_turns_passed: true

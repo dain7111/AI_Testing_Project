@@ -1,0 +1,19 @@
+# Secrets / API Keys (Tuyệt đối KHÔNG đẩy lên Git)
+.env
+
+# Python Caches
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Pytest
+.pytest_cache/
+
+# Virtual Environments (Nếu sau này bạn tạo)
+venv/
+env/
+.venv/
+
+# VS Code settings (Tuỳ chọn)
+.vscode/
